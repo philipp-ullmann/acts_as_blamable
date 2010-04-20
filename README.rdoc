@@ -16,9 +16,9 @@ Add a <tt>current_user</tt> class method to the User model, which returns for ex
    end
  end
 	
-	class Post < ActiveRecord::Base
-	 	acts_as_blamable
-	end
+ class Post < ActiveRecord::Base
+  acts_as_blamable
+ end
 
 Add <tt>created_by</tt> and <tt>updated_by</tt> attributes to the <tt>posts</tt> table.
 
