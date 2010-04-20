@@ -1,17 +1,45 @@
-= acts_as_blamable
+== Description
 
-Description goes here.
+The <tt>acts_as_blamable</tt> plugin stores the creator and updater of an ActiveRecord model.
 
-== Note on Patches/Pull Requests
+== Installation
+
+ gem install acts_as_blamable
+
+== Usage
+
+Add a <tt>current_user</tt> class method to the User model, which returns for example the logged in user.
+
+	class User < ActiveRecord::Base
+	 	def self.current_user
+		  ...
+		end
+	end
+	
+	class Post < ActiveRecord::Base
+	 	acts_as_blamable
+	end
+
+Add <tt>created_by</tt> and <tt>updated_by</tt> attributes to the <tt>posts</tt> table.
+
+ create_table :posts do |t|
+   t.integer :created_by, :updated_by
+ end
+
+== Configuration
+
+Defaults
+
+ { :current_user_method => 'current_user', :class_name => 'User', :creator_foreign_key => :created_by, :updater_foreign_key => :updated_by }
+
+Modify the defaults if necessary
+
+ class Person < ActiveRecord::Base
+   def self.current_person
+     Person.first
+   end
+ end
  
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
-
-== Copyright
-
-Copyright (c) 2010 Philipp Ullmann. See LICENSE for details.
+ class Comment < ActiveRecord::Base
+   acts_as_blamable :class_name => 'Person', :creator_foreign_key => :creator_id, :updater_foreign_key => :updater_id, :current_user_method => 'current_person'
+end

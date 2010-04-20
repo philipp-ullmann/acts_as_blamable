@@ -4,18 +4,19 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "acts_as_blamable"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "philipp.ullmann@create.at"
-    gem.homepage = "http://github.com/create-philipp-ullmann/acts_as_blamable"
-    gem.authors = ["Philipp Ullmann"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.name = 'acts_as_blamable'
+    gem.summary = 'Stores the creator and updater of a database record'
+    gem.description = 'Automatically set created_by and updated_by fields'
+    gem.email = 'philipp.ullmann@create.at'
+    gem.homepage = 'http://github.com/create-philipp-ullmann/acts_as_blamable'
+    gem.authors = ['Philipp Ullmann']
+    gem.add_development_dependency 'rspec', '>= 1.3.0'
+    gem.add_development_dependency 'sqlite3-ruby', '>=1.2.5'
+    gem.add_development_dependency 'activerecord', '>= 2.3.5'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+  puts 'Jeweler (or a dependency) not available. Install it with: gem install jeweler'
 end
 
 require 'spec/rake/spectask'
@@ -39,7 +40,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "acts_as_blamable #{version}"
+  rdoc.title = "test #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
