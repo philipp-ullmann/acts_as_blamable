@@ -10,11 +10,11 @@ The <tt>acts_as_blamable</tt> plugin stores the creator and updater of an Active
 
 Add a <tt>current_user</tt> class method to the User model, which returns for example the logged in user.
 
-	class User < ActiveRecord::Base
-	 	def self.current_user
-		  ...
-		end
-	end
+ class User < ActiveRecord::Base
+   def self.current_user
+     ...
+   end
+ end
 	
 	class Post < ActiveRecord::Base
 	 	acts_as_blamable
@@ -42,4 +42,4 @@ Modify the defaults if necessary
  
  class Comment < ActiveRecord::Base
    acts_as_blamable :class_name => 'Person', :creator_foreign_key => :creator_id, :updater_foreign_key => :updater_id, :current_user_method => 'current_person'
-end
+ end
