@@ -1,3 +1,7 @@
+v0.0.3 (2010-04-20)
+
+* Bug fix: Kernel.const_get(self.class.bl_conf[:class_name]) doesn't work with Namespace i.e. System::User
+
 v0.0.2 (2010-04-20)
 
 * Edited documentation

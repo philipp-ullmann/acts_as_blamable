@@ -38,7 +38,7 @@ module ActsAsBlamable
     end
     
     def current_user
-      Kernel.const_get(self.class.bl_conf[:class_name]).send("#{self.class.bl_conf[:current_user_method]}")
+      self.class.bl_conf[:class_name].constantize.send("#{self.class.bl_conf[:current_user_method]}")
     end
   end
 end
