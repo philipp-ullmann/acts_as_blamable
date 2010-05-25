@@ -11,10 +11,8 @@ module ActsAsBlamable
       class_eval do
         include ActsAsBlamable::InstanceMethods
         
-        with_options :class_name => bl_conf[:class_name] do |o|
-          o.belongs_to :creator, :foreign_key => bl_conf[:creator_foreign_key]
-          o.belongs_to :updater, :foreign_key => bl_conf[:updater_foreign_key]
-        end
+        belongs_to :creator, :foreign_key => bl_conf[:creator_foreign_key], :class_name => bl_conf[:class_name]
+        belongs_to :updater, :foreign_key => bl_conf[:updater_foreign_key], :class_name => bl_conf[:class_name]
         
         before_create :save_creator
         before_update :save_updater
