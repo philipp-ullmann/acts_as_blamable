@@ -1,3 +1,8 @@
+v0.0.4 (2010-05-25)
+
+* Bug fix: Removed with_options method within spec definition
+* Dependency 'activerecord', '>= 3.0.0.beta3'
+
 v0.0.3 (2010-04-20)
 
 * Bug fix: Kernel.const_get(self.class.bl_conf[:class_name]) doesn't work with Namespace i.e. System::User
