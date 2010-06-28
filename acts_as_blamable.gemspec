@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_blamable}
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Philipp Ullmann"]
-  s.date = %q{2010-05-25}
+  s.date = %q{2010-06-28}
   s.description = %q{Automatically set created_by and updated_by fields}
   s.email = %q{philipp.ullmann@create.at}
   s.extra_rdoc_files = [
@@ -46,17 +46,17 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_development_dependency(%q<sqlite3-ruby>, [">= 1.2.5"])
-      s.add_development_dependency(%q<activerecord>, [">= 3.0.0.beta3"])
+      s.add_development_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
+      s.add_development_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
     else
       s.add_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_dependency(%q<sqlite3-ruby>, [">= 1.2.5"])
-      s.add_dependency(%q<activerecord>, [">= 3.0.0.beta3"])
+      s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
+      s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.3.0"])
-    s.add_dependency(%q<sqlite3-ruby>, [">= 1.2.5"])
-    s.add_dependency(%q<activerecord>, [">= 3.0.0.beta3"])
+    s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
+    s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
   end
 end
 

@@ -1,11 +1,12 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'rubygems'
 require 'active_record'
 require 'acts_as_blamable'
 require 'spec'
 require 'spec/autorun'
 
-ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
+ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => ':memory:')
 
 def setup_db
   ActiveRecord::Schema.define(:version => 1) do

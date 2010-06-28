@@ -43,3 +43,7 @@ Modify the defaults if necessary
  class Comment < ActiveRecord::Base
    acts_as_blamable :class_name => 'Person', :creator_foreign_key => :creator_id, :updater_foreign_key => :updater_id, :current_user_method => 'current_person'
  end
+
+== Specs
+
+Tested with Ruby on Rails version: <tt>3.0.0.beta4</tt> and ruby version <tt>Ruby Enterprise Edition 1.8.7 build 2010.02</tt>.
