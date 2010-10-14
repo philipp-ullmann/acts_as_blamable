@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_blamable}
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Philipp Ullmann"]
-  s.date = %q{2010-06-28}
+  s.date = %q{2010-10-14}
   s.description = %q{Automatically set created_by and updated_by fields}
   s.email = %q{philipp.ullmann@create.at}
   s.extra_rdoc_files = [
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     ".rspec",
      "CHANGELOG.rdoc",
      "LICENSE",
      "README.rdoc",
@@ -27,7 +28,6 @@ Gem::Specification.new do |s|
      "acts_as_blamable.gemspec",
      "lib/acts_as_blamable.rb",
      "spec/acts_as_blamable_spec.rb",
-     "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/create-philipp-ullmann/acts_as_blamable}
@@ -45,18 +45,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_development_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
-      s.add_development_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+      s.add_development_dependency(%q<rspec>, [">= 2.0.0"])
+      s.add_development_dependency(%q<sqlite3-ruby>, [">= 1.3.1"])
+      s.add_development_dependency(%q<activerecord>, [">= 3.0.0"])
     else
-      s.add_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
-      s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+      s.add_dependency(%q<rspec>, [">= 2.0.0"])
+      s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.1"])
+      s.add_dependency(%q<activerecord>, [">= 3.0.0"])
     end
   else
-    s.add_dependency(%q<rspec>, [">= 1.3.0"])
-    s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.0"])
-    s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+    s.add_dependency(%q<rspec>, [">= 2.0.0"])
+    s.add_dependency(%q<sqlite3-ruby>, [">= 1.3.1"])
+    s.add_dependency(%q<activerecord>, [">= 3.0.0"])
   end
 end
 
