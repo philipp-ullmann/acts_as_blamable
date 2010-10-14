@@ -3,8 +3,6 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'rubygems'
 require 'active_record'
 require 'acts_as_blamable'
-require 'spec'
-require 'spec/autorun'
 
 ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => ':memory:')
 
@@ -54,7 +52,4 @@ end
 
 class Comment < ActiveRecord::Base
   acts_as_blamable :class_name => 'Person', :creator_foreign_key => :creator_id, :updater_foreign_key => :updater_id, :current_user_method => 'current_person'
-end
-
-Spec::Runner.configure do |config|
 end
